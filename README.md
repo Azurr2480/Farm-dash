@@ -12,6 +12,17 @@ yarn dev
 pnpm dev
 # or
 bun dev
+
+
+for env.local
+env.local GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+NEXT_PUBLIC_TELEGRAM_BOT_TOKEN=
+NEXT_PUBLIC_TELEGRAM_CHAT_ID=
+FIREBASE_PROJECT_ID=
+FIREBASE_CLIENT_EMAIL=
+FIREBASE_PRIVATE_KEY=
+FIREBASE_DATABASE_URL=
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
