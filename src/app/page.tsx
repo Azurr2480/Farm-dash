@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { redirect } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
 import { watchCombinedAlert } from "./utils/watchCombinedAlert";
-import { startAutoPump, stopAutoPump } from "./utils/autoPump";
 
 import { database, ref, set, onValue } from "./firebase";
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from "recharts";
@@ -35,12 +34,6 @@ function d1() {
     // Listen for toggle state
     const toggleRef = ref(database, "pump/status");
     const modeRef = ref(database, "pump/mode");
-
-    if (mode === "auto") {
-      startAutoPump(database);
-    } else {
-      stopAutoPump();
-    }
 
     watchCombinedAlert();
 
@@ -119,7 +112,6 @@ function d1() {
       unsubscribeMode();
       unsubscribeSensor();
       unsubscribeWater();
-      stopAutoPump();
     };
 
     
@@ -320,7 +312,8 @@ function d1() {
                 </div>
               </div>
 
-            
+
+
             </div>
           </div>
         </div>         
