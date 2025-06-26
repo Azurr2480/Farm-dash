@@ -12,7 +12,10 @@ export const options: NextAuthOptions = {
     ],
     callbacks: {
         async signIn({ user }) {
-          const allowedEmails = ["azzuri24800@gmail.com"]; // Replace with your email
+          const allowedEmails = [
+            "azzuri24800@gmail.com",
+            "zorkia@gmail.com"
+          ]; // Replace with your email
     
           if (!allowedEmails.includes(user.email ?? "")) {
             // Alert and redirect on the client side
